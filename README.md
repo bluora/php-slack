@@ -25,7 +25,7 @@ Then [create an incoming webhook](https://my.slack.com/services/new/incoming-web
 
 ```php
 // Instantiate without defaults
-$client = new Bluora\PhpSlack\Client('https://hooks.slack.com/...');
+$client = new Bluora\Slack\Client('https://hooks.slack.com/...');
 
 // Instantiate with defaults, so all messages created
 // will be sent from 'Cyril' and to the #accounting channel
@@ -36,7 +36,7 @@ $settings = [
 	'link_names' => true
 ];
 
-$client = new Bluora\PhpSlack\Client('https://hooks.slack.com/...', $settings);
+$client = new Bluora\Slack\Client('https://hooks.slack.com/...', $settings);
 ```
 
 #### Settings
