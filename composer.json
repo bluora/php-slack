@@ -26,6 +26,5 @@
         "psr-4": {
             "Bluora\\Slack\\": "src/"
         }
-    },
-    "minimum-stability": "stable"
+    }
 }
