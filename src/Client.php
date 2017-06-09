@@ -88,7 +88,7 @@ class Client
      * @return void
      *
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
-     * @SuppressWarnings(PHPMD.NpathComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
      */
     public function __construct($endpoint, array $attributes = [], Guzzle $guzzle = null)
     {

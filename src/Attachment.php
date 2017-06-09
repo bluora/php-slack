@@ -137,7 +137,7 @@ class Attachment
      * @return void
      *
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
-     * @SuppressWarnings(PHPMD.NpathComplexity)
+     * @SuppressWarnings(PHPMD.NPathComplexity)
      */
     public function __construct(array $attributes)
     {
