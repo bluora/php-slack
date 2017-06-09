@@ -88,6 +88,7 @@ class Client
      * @return void
      *
      * @SuppressWarnings(PHPMD.CyclomaticComplexity)
+     * @SuppressWarnings(PHPMD.NpathComplexity)
      */
     public function __construct($endpoint, array $attributes = [], Guzzle $guzzle = null)
     {
@@ -231,7 +232,7 @@ class Client
      *
      * @return bool
      */
-    public function getLinkNames()
+    public function isLinkNames()
     {
         return $this->link_names;
     }
@@ -253,7 +254,7 @@ class Client
      *
      * @return bool
      */
-    public function getUnfurlLinks()
+    public function isUnfurlLinks()
     {
         return $this->unfurl_links;
     }
@@ -274,7 +275,7 @@ class Client
      *
      * @return bool
      */
-    public function getUnfurlMedia()
+    public function isUnfurlMedia()
     {
         return $this->unfurl_media;
     }
@@ -296,7 +297,7 @@ class Client
      *
      * @return bool
      */
-    public function getAllowMarkdown()
+    public function isAllowMarkdown()
     {
         return $this->allow_markdown;
     }
@@ -351,7 +352,7 @@ class Client
 
         $message->setIcon($this->getDefaultIcon());
 
-        $message->setAllowMarkdown($this->getAllowMarkdown());
+        $message->setAllowMarkdown($this->isAllowMarkdown());
 
         $message->setMarkdownInAttachments($this->getMarkdownInAttachments());
 
@@ -389,10 +390,10 @@ class Client
             'text' => $message->getText(),
             'channel' => $message->getChannel(),
             'username' => $message->getUsername(),
-            'link_names' => $this->getLinkNames() ? 1 : 0,
-            'unfurl_links' => $this->getUnfurlLinks(),
-            'unfurl_media' => $this->getUnfurlMedia(),
-            'mrkdwn' => $message->getAllowMarkdown(),
+            'link_names' => $this->isLinkNames() ? 1 : 0,
+            'unfurl_links' => $this->isUnfurlLinks(),
+            'unfurl_media' => $this->isUnfurlMedia(),
+            'mrkdwn' => $message->isAllowMarkdown(),
         ];
 
         if ($icon = $message->getIcon()) {

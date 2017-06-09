@@ -35,13 +35,13 @@ class ClientUnitTest extends TestCase
 
         $this->assertSame($defaults['icon'], $client->getDefaultIcon());
 
-        $this->assertTrue($client->getLinkNames());
+        $this->assertTrue($client->isLinkNames());
 
-        $this->assertTrue($client->getUnfurlLinks());
+        $this->assertTrue($client->isUnfurlLinks());
 
-        $this->assertFalse($client->getUnfurlMedia());
+        $this->assertFalse($client->isUnfurlMedia());
 
-        $this->assertSame($defaults['allow_markdown'], $client->getAllowMarkdown());
+        $this->assertSame($defaults['allow_markdown'], $client->isAllowMarkdown());
 
         $this->assertSame($defaults['markdown_in_attachments'], $client->getMarkdownInAttachments());
     }

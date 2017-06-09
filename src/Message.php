@@ -213,7 +213,7 @@ class Message
      *
      * @return bool
      */
-    public function getAllowMarkdown()
+    public function isAllowMarkdown()
     {
         return $this->allow_markdown;
     }

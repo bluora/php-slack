@@ -99,7 +99,7 @@ class AttachmentField
      *
      * @return bool
      */
-    public function getShort()
+    public function isShort()
     {
         return $this->short;
     }
@@ -128,7 +128,7 @@ class AttachmentField
         return [
             'title' => $this->getTitle(),
             'value' => $this->getValue(),
-            'short' => $this->getShort(),
+            'short' => $this->isShort(),
         ];
     }
 }
