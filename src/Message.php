@@ -186,10 +186,10 @@ class Message
             return;
         }
 
+        $this->iconType = self::ICON_TYPE_URL;
+
         if (mb_substr($icon, 0, 1) == ':' && mb_substr($icon, mb_strlen($icon) - 1, 1) == ':') {
             $this->iconType = self::ICON_TYPE_EMOJI;
-        } else {
-            $this->iconType = self::ICON_TYPE_URL;
         }
 
         $this->icon = $icon;
