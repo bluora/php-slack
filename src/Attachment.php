@@ -4,6 +4,9 @@ namespace Bluora\Slack;
 
 use InvalidArgumentException;
 
+/**
+ * @SuppressWarnings(PHPMD.WeightedMethodCount)
+ */
 class Attachment
 {
     /**
