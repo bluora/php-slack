@@ -1,6 +1,6 @@
 <?php
 
-namespace Maknz\Slack;
+namespace Bluora\Slack;
 
 use InvalidArgumentException;
 
@@ -10,7 +10,7 @@ class Message
      * Reference to the Slack client responsible for sending
      * the message.
      *
-     * @var \Maknz\Slack\Client
+     * @var \Bluora\Slack\Client
      */
     protected $client;
 
@@ -85,7 +85,7 @@ class Message
     /**
      * Instantiate a new Message.
      *
-     * @param \Maknz\Slack\Client $client
+     * @param \Bluora\Slack\Client $client
      * @return void
      */
     public function __construct(Client $client)
@@ -344,7 +344,7 @@ class Message
             return $this;
         }
 
-        throw new InvalidArgumentException('Attachment must be an instance of Maknz\\Slack\\Attachment or a keyed array');
+        throw new InvalidArgumentException('Attachment must be an instance of Bluora\\Slack\\Attachment or a keyed array');
     }
 
     /**

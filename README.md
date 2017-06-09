@@ -1,23 +1,32 @@
-# Slack for PHP
-
-A simple PHP package for sending messages to [Slack](https://slack.com) with [incoming webhooks](https://my.slack.com/services/new/incoming-webhook), focussed on ease-of-use and elegant syntax.
-
-* Laravel integration: [Slack for Laravel](https://github.com/bluora/laravel-slack)
-* Symfony integration: [NexySlackBundle](https://github.com/nexylan/NexySlackBundle)
-
-## Requirements
-
-* PHP 7.0<
-
-## Installation
-
-You can install the package using the [Composer](https://getcomposer.org/) package manager. You can install it by running this command in your project root:
-
-```sh
-composer require bluora/php-slack
+```
+   _____ _            _    
+  / ____| |          | |   
+ | (___ | | __ _  ___| | __
+  \___ \| |/ _` |/ __| |/ /
+  ____) | | (_| | (__|   < 
+ |_____/|_|\__,_|\___|_|\_\
+                                                                               
 ```
 
-Then [create an incoming webhook](https://my.slack.com/services/new/incoming-webhook) on your Slack account for the package to use. You'll need the webhook URL to instantiate the client (or for the configuration file if using Laravel).
+Send messages to [Slack](https://slack.com) with [incoming webhooks](https://my.slack.com/services/new/incoming-webhook).
+
+[![Latest Stable Version](https://poser.pugx.org/bluora/php-slack/v/stable.svg)](https://packagist.org/packages/bluora/php-slack) [![Total Downloads](https://poser.pugx.org/bluora/php-slack/downloads.svg)](https://packagist.org/packages/bluora/php-slack) [![Latest Unstable Version](https://poser.pugx.org/bluora/php-slack/v/unstable.svg)](https://packagist.org/packages/bluora/php-slack) [![Built for Laravel](https://img.shields.io/badge/Built_for-Laravel-green.svg)](https://laravel.com/) [![License](https://poser.pugx.org/bluora/php-slack/license.svg)](https://packagist.org/packages/bluora/php-slack)
+
+[![Build Status](https://travis-ci.org/bluora/php-slack.svg?branch=master)](https://travis-ci.org/bluora/php-slack) [![StyleCI](https://styleci.io/repos/x/shield?branch=master)](https://styleci.io/repos/x) [![Test Coverage](https://codeclimate.com/github/bluora/php-slack/badges/coverage.svg)](https://codeclimate.com/github/bluora/php-slack/coverage) [![Issue Count](https://codeclimate.com/github/bluora/php-slack/badges/issue_count.svg)](https://codeclimate.com/github/bluora/php-slack) [![Code Climate](https://codeclimate.com/github/bluora/php-slack/badges/gpa.svg)](https://codeclimate.com/github/bluora/php-slack) 
+
+This package has been adapted by H&H|Digital, an Australian botique developer. Visit us at [hnh.digital](http://hnh.digital).
+
+## Integrations
+
+* Laravel: [Slack for Laravel](https://github.com/bluora/laravel-slack)
+
+## Install
+
+Via composer:
+
+`$ composer require bluora/php-slack dev-master`
+
+Then [create an incoming webhook](https://my.slack.com/services/new/incoming-webhook) on your Slack account for the package to use. You'll need the webhook URL to instantiate the client.
 
 ## Basic Usage
 
@@ -31,8 +40,8 @@ $client = new Bluora\Slack\Client('https://hooks.slack.com/...');
 // will be sent from 'Cyril' and to the #accounting channel
 // by default. Any names like @regan or #channel will also be linked.
 $settings = [
-	'username' => 'Cyril',
-	'channel' => '#accounting',
+	'username'   => 'Cyril',
+	'channel'    => '#accounting',
 	'link_names' => true
 ];
 
@@ -227,4 +236,13 @@ $attachment->setFields($bigArrayOfFields);
 
 ## Contributing
 
-If you're having problems, spot a bug, or have a feature suggestion, please log and issue on Github. If you'd like to have a crack yourself, fork the package and make a pull request. Please include tests for any added or changed functionality. If it's a bug, include a regression test.
+Please see [CONTRIBUTING](https://github.com/bluora/php-slack/blob/master/CONTRIBUTING.md) for details.
+
+## Credits
+
+* [Rocco Howard](https://github.com/therocis)
+* [All Contributors](https://github.com/bluora/php-slack/contributors)
+
+## License
+
+The BSD 2-clause. Please see [License File](https://github.com/bluora/php-slack/blob/master/LICENSE) for more information.

@@ -1,9 +1,10 @@
 <?php
 
-use Maknz\Slack\Client;
-use Maknz\Slack\Attachment;
+use Bluora\Slack\Client;
+use Bluora\Slack\Attachment;
+use PHPUnit\Framework\TestCase;
 
-class ClientFunctionalTest extends PHPUnit_Framework_TestCase
+class ClientFunctionalTest extends TestCase
 {
     public function testPlainMessage()
     {
@@ -321,7 +322,7 @@ class ClientFunctionalTest extends PHPUnit_Framework_TestCase
     {
         $client = $this->getNetworkStubbedClient();
 
-        $this->setExpectedException(RuntimeException::class, 'JSON encoding error');
+        $this->expectException(RuntimeException::class, 'JSON encoding error');
 
         // Force encoding to ISO-8859-1 so we know we're providing malformed
         // encoding to json_encode

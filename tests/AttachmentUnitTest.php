@@ -1,10 +1,11 @@
 <?php
 
-use Maknz\Slack\Attachment;
-use Maknz\Slack\AttachmentAction;
-use Maknz\Slack\AttachmentField;
+use Bluora\Slack\Attachment;
+use Bluora\Slack\AttachmentAction;
+use Bluora\Slack\AttachmentField;
+use PHPUnit\Framework\TestCase;
 
-class AttachmentUnitTest extends PHPUnit_Framework_TestCase
+class AttachmentUnitTest extends TestCase
 {
     public function testAttachmentCreationFromArray()
     {

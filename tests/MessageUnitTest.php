@@ -1,13 +1,14 @@
 <?php
 
-use Maknz\Slack\Message;
-use Maknz\Slack\Attachment;
+use Bluora\Slack\Message;
+use Bluora\Slack\Attachment;
+use PHPUnit\Framework\TestCase;
 
-class MessageUnitTest extends PHPUnit_Framework_TestCase
+class MessageUnitTest extends TestCase
 {
     public function testInstantiation()
     {
-        $this->assertInstanceOf('Maknz\Slack\Message', $this->getMessage());
+        $this->assertInstanceOf('Bluora\Slack\Message', $this->getMessage());
     }
 
     public function testSetText()
@@ -182,6 +183,6 @@ class MessageUnitTest extends PHPUnit_Framework_TestCase
 
     protected function getMessage()
     {
-        return new Message(Mockery::mock('Maknz\Slack\Client'));
+        return new Message(Mockery::mock('Bluora\Slack\Client'));
     }
 }

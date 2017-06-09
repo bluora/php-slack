@@ -1,6 +1,6 @@
 <?php
 
-namespace Maknz\Slack;
+namespace Bluora\Slack;
 
 use InvalidArgumentException;
 
@@ -206,7 +206,7 @@ class AttachmentAction
             return $this;
         }
 
-        throw new InvalidArgumentException('The action confirmation must be an instance of Maknz\Slack\ActionConfirmation or a keyed array');
+        throw new InvalidArgumentException('The action confirmation must be an instance of Bluora\Slack\ActionConfirmation or a keyed array');
     }
 
     /**
