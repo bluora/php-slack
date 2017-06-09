@@ -1,9 +1,9 @@
 <?php
 
 use Bluora\Slack\Attachment;
-use Bluora\Slack\AttachmentAction;
-use Bluora\Slack\AttachmentField;
 use PHPUnit\Framework\TestCase;
+use Bluora\Slack\AttachmentField;
+use Bluora\Slack\AttachmentAction;
 
 class AttachmentUnitTest extends TestCase
 {
