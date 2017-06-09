@@ -5,7 +5,7 @@ namespace Bluora\Slack;
 use InvalidArgumentException;
 
 /**
- * @SuppressWarnings(PHPMD.WeightedMethodCount)
+ * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  */
 class Attachment
 {
@@ -135,6 +135,8 @@ class Attachment
      *
      * @param array $attributes
      * @return void
+     *
+     * @SuppressWarnings(PHPMD.CyclomaticComplexity)
      */
     public function __construct(array $attributes)
     {
