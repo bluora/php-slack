@@ -223,7 +223,7 @@ class AttachmentAction
 
     /**
      * Set the optional type for the attachment.
-     * 
+     *
      * @param string $type
      *
      * @return AttachmentAction
@@ -327,7 +327,7 @@ class AttachmentAction
             'style' => $this->getStyle(),
             'type' => $this->getType(),
             'value' => $this->getValue(),
-            'confirm' => !is_null($this->getConfirm()) ? $this->getConfirm()->toArray() : null,
+            'confirm' => ! is_null($this->getConfirm()) ? $this->getConfirm()->toArray() : null,
         ];
     }
 }
