@@ -88,6 +88,20 @@ class AttachmentAction
     }
 
     /**
+     * Set or get the optional name appear within the attachment.
+     *
+     * @return mixed
+     */
+    public function name($name = false)
+    {
+        if ($name === false) {
+            return $this->getName();
+        }
+
+        return $this->setName($name);
+    }
+
+    /**
      * @return string
      */
     public function getName()
@@ -104,6 +118,20 @@ class AttachmentAction
         $this->name = $name;
 
         return $this;
+    }
+
+    /**
+     * Set or get the optional text to appear within the attachment.
+     *
+     * @return mixed
+     */
+    public function text($text = false)
+    {
+        if ($text === false) {
+            return $this->getText();
+        }
+
+        return $this->setText($text);
     }
 
     /**
@@ -126,6 +154,20 @@ class AttachmentAction
     }
 
     /**
+     * Set or get the optional style for the attachment.
+     *
+     * @return mixed
+     */
+    public function style($style = false)
+    {
+        if ($style === false) {
+            return $this->getStyle();
+        }
+
+        return $this->setStyle($style);
+    }
+
+    /**
      * @return string
      */
     public function getStyle()
@@ -145,6 +187,33 @@ class AttachmentAction
     }
 
     /**
+     * Set type to button.
+     *
+     * @return mixed
+     */
+    public function button($title)
+    {
+        return $this->setText($title)
+            ->setType('button');
+    }
+
+    /**
+     * Set or get the optional type for the attachment.
+     *
+     * @return mixed
+     */
+    public function type($type = false)
+    {
+        if ($type === false) {
+            return $this->getType();
+        }
+
+        return $this->setType($type);
+    }
+
+    /**
+     * Get the optional type for the attachment.
+     *
      * @return string
      */
     public function getType()
@@ -153,7 +222,10 @@ class AttachmentAction
     }
 
     /**
+     * Set the optional type for the attachment.
+     * 
      * @param string $type
+     *
      * @return AttachmentAction
      */
     public function setType($type)
@@ -164,6 +236,22 @@ class AttachmentAction
     }
 
     /**
+     * Set or get the optional value for the attachment.
+     *
+     * @return mixed
+     */
+    public function value($value = false)
+    {
+        if ($value === false) {
+            return $this->getValue();
+        }
+
+        return $this->setValue($value);
+    }
+
+    /**
+     * Get the optional value for the attachment.
+     *
      * @return string
      */
     public function getValue()
@@ -172,7 +260,10 @@ class AttachmentAction
     }
 
     /**
+     * Set the optional value for the attachment.
+     *
      * @param string $value
+     *
      * @return AttachmentAction
      */
     public function setValue($value)
@@ -180,6 +271,20 @@ class AttachmentAction
         $this->value = $value;
 
         return $this;
+    }
+
+    /**
+     * Set or get the optional confirm for the attachment.
+     *
+     * @return mixed
+     */
+    public function confirm($value = false)
+    {
+        if ($confirm === false) {
+            return $this->getConfirm();
+        }
+
+        return $this->setConfirm($confirm);
     }
 
     /**
@@ -222,7 +327,7 @@ class AttachmentAction
             'style' => $this->getStyle(),
             'type' => $this->getType(),
             'value' => $this->getValue(),
-            'confirm' => $this->getConfirm()->toArray(),
+            'confirm' => !is_null($this->getConfirm()) ? $this->getConfirm()->toArray() : null,
         ];
     }
 }

@@ -102,6 +102,10 @@ class Client
             $this->setDefaultUsername($attributes['username']);
         }
 
+        if (isset($attributes['as_user'])) {
+            $this->setDefaultAsUser($attributes['as_user']);
+        }
+
         if (isset($attributes['icon'])) {
             $this->setDefaultIcon($attributes['icon']);
         }
@@ -143,6 +147,20 @@ class Client
     }
 
     /**
+     * Set or get Slack endpoint.
+     *
+     * @return mixed
+     */
+    public function endpoint($endpoint = false)
+    {
+        if ($endpoint === false) {
+            return $this->getEndpoint();
+        }
+
+        return $this->setEndpoint($endpoint);
+    }
+
+    /**
      * Get the Slack endpoint.
      *
      * @return string
@@ -161,6 +179,8 @@ class Client
     public function setEndpoint($endpoint)
     {
         $this->endpoint = $endpoint;
+
+        return $this;
     }
 
     /**
@@ -182,6 +202,8 @@ class Client
     public function setDefaultChannel($channel)
     {
         $this->channel = $channel;
+
+        return $this;
     }
 
     /**
@@ -203,6 +225,8 @@ class Client
     public function setDefaultUsername($username)
     {
         $this->username = $username;
+
+        return $this;
     }
 
     /**
@@ -224,6 +248,8 @@ class Client
     public function setDefaultIcon($icon)
     {
         $this->icon = $icon;
+
+        return $this;
     }
 
     /**
@@ -247,6 +273,8 @@ class Client
     public function setLinkNames($value)
     {
         $this->link_names = (bool) $value;
+
+        return $this;
     }
 
     /**
@@ -268,6 +296,8 @@ class Client
     public function setUnfurlLinks($value)
     {
         $this->unfurl_links = (bool) $value;
+
+        return $this;
     }
 
     /**
@@ -289,6 +319,8 @@ class Client
     public function setUnfurlMedia($value)
     {
         $this->unfurl_media = (bool) $value;
+
+        return $this;
     }
 
     /**
@@ -312,6 +344,8 @@ class Client
     public function setAllowMarkdown($value)
     {
         $this->allow_markdown = (bool) $value;
+
+        return $this;
     }
 
     /**
@@ -335,6 +369,8 @@ class Client
     public function setMarkdownInAttachments(array $fields)
     {
         $this->markdown_in_attachments = $fields;
+
+        return $this;
     }
 
     /**

@@ -36,6 +36,13 @@ class Message
     protected $username;
 
     /**
+     * Post as the user instead of the bot.
+     *
+     * @var string
+     */
+    protected $as_user = false;
+
+    /**
      * The URL to the icon to use.
      *
      * @var string
@@ -117,6 +124,17 @@ class Message
     }
 
     /**
+     * Change the channel the post will be made to.
+     *
+     * @param string $channel
+     * @return $this
+     */
+    public function to($channel)
+    {
+        return $this->setChannel($channel);
+    }
+
+    /**
      * Get the channel we will post to.
      *
      * @return string
@@ -140,6 +158,21 @@ class Message
     }
 
     /**
+     * Change the name of the user the post will be made as.
+     *
+     * @param string $username
+     * @return $this
+     */
+    public function from($username = false)
+    {
+        if ($username === false) {
+            return $this->getUsername();
+        }
+
+        return $this->setUsername($username);
+    }
+
+    /**
      * Get the username we will post as.
      *
      * @return string
@@ -160,6 +193,20 @@ class Message
         $this->username = $username;
 
         return $this;
+    }
+
+    /**
+     * Set or get the icon (either URL or emoji) we will post as.
+     *
+     * @return mixed
+     */
+    public function icon($icon = false)
+    {
+        if ($icon === false) {
+            return $this->getIcon();
+        }
+
+        return $this->setIcon($icon);
     }
 
     /**
@@ -277,32 +324,6 @@ class Message
     public function setMarkdownInAttachments(array $fields)
     {
         $this->markdown_in_attachments = $fields;
-
-        return $this;
-    }
-
-    /**
-     * Change the name of the user the post will be made as.
-     *
-     * @param string $username
-     * @return $this
-     */
-    public function from($username)
-    {
-        $this->setUsername($username);
-
-        return $this;
-    }
-
-    /**
-     * Change the channel the post will be made to.
-     *
-     * @param string $channel
-     * @return $this
-     */
-    public function to($channel)
-    {
-        $this->setChannel($channel);
 
         return $this;
     }

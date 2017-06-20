@@ -87,6 +87,13 @@ class Attachment
     protected $color = 'good';
 
     /**
+     * The callback id to send when using an interactive button.
+     *
+     * @var string
+     */
+    protected $callback_id;
+
+    /**
      * The text to use for the attachment footer.
      *
      * @var string
@@ -211,6 +218,20 @@ class Attachment
     }
 
     /**
+     * Set or get fallback.
+     *
+     * @return mixed
+     */
+    public function fallback($fallback = false)
+    {
+        if ($fallback === false) {
+            return $this->getFallback();
+        }
+
+        return $this->setFallback($fallback);
+    }
+
+    /**
      * Get the fallback text.
      *
      * @return string
@@ -231,6 +252,20 @@ class Attachment
         $this->fallback = $fallback;
 
         return $this;
+    }
+
+    /**
+     * Set or get the optional text to appear within the attachment..
+     *
+     * @return mixed
+     */
+    public function text($text = false)
+    {
+        if ($text === false) {
+            return $this->getText();
+        }
+
+        return $this->setText($text);
     }
 
     /**
@@ -257,6 +292,20 @@ class Attachment
     }
 
     /**
+     * Set or get the optional image to appear within the attachment.
+     *
+     * @return mixed
+     */
+    public function imageUrl($image_url = false)
+    {
+        if ($image_url === false) {
+            return $this->getImageUrl();
+        }
+
+        return $this->setImageUrl($image_url);
+    }
+
+    /**
      * Get the optional image to appear within the attachment.
      *
      * @return string
@@ -277,6 +326,20 @@ class Attachment
         $this->image_url = $image_url;
 
         return $this;
+    }
+
+    /**
+     * Set or get the optional thumbnail to appear within the attachment.
+     *
+     * @return mixed
+     */
+    public function thumbUrl($thumb_url = false)
+    {
+        if ($thumb_url === false) {
+            return $this->getThumbUrl();
+        }
+
+        return $this->setThumbUrl($thumb_url);
     }
 
     /**
@@ -303,6 +366,20 @@ class Attachment
     }
 
     /**
+     * Set or get the text that should appear above the formatted data.
+     *
+     * @return mixed
+     */
+    public function pretext($pretext = false)
+    {
+        if ($pretext === false) {
+            return $this->getPretext();
+        }
+
+        return $this->setPretext($pretext);
+    }
+
+    /**
      * Get the text that should appear above the formatted data.
      *
      * @return string
@@ -323,6 +400,20 @@ class Attachment
         $this->pretext = $pretext;
 
         return $this;
+    }
+
+    /**
+     * Set or get the color to use for the attachment.
+     *
+     * @return mixed
+     */
+    public function color($color = false)
+    {
+        if ($color === false) {
+            return $this->getColor();
+        }
+
+        return $this->setColor($color);
     }
 
     /**
@@ -349,6 +440,57 @@ class Attachment
     }
 
     /**
+     * Set or get the callback id to use for the attachment.
+     *
+     * @return mixed
+     */
+    public function callbackId($callback_id = false)
+    {
+        if ($callback_id === false) {
+            return $this->getCallbackId();
+        }
+
+        return $this->setCallbackId($callback_id);
+    }
+
+    /**
+     * Get the callback id to use for the attachment.
+     *
+     * @return string
+     */
+    public function getCallbackId()
+    {
+        return $this->callback_id;
+    }
+
+    /**
+     * Set the callback id to use for the attachment.
+     *
+     * @param string $callback_id
+     * @return $this
+     */
+    public function setCallbackId($callback_id)
+    {
+        $this->callback_id = $callback_id;
+
+        return $this;
+    }
+
+    /**
+     * Set or get the footer to use for the attachment.
+     *
+     * @return mixed
+     */
+    public function footer($footer = false)
+    {
+        if ($footer === false) {
+            return $this->getFooter();
+        }
+
+        return $this->setFooter($footer);
+    }
+
+    /**
      * Get the footer to use for the attachment.
      *
      * @return string
@@ -369,6 +511,20 @@ class Attachment
         $this->footer = $footer;
 
         return $this;
+    }
+
+    /**
+     * Set or get the footer icon to use for the attachment.
+     *
+     * @return mixed
+     */
+    public function footerIcon($footer_icon = false)
+    {
+        if ($footer_icon === false) {
+            return $this->getFooterIcon();
+        }
+
+        return $this->setFooterIcon($footer_icon);
     }
 
     /**
@@ -395,6 +551,20 @@ class Attachment
     }
 
     /**
+     * Set or get the timestamp to use for the attachment.
+     *
+     * @return mixed
+     */
+    public function timestamp($timestamp = false)
+    {
+        if ($timestamp === false) {
+            return $this->getTimestamp();
+        }
+
+        return $this->setTimestamp($timestamp);
+    }
+
+    /**
      * Get the timestamp to use for the attachment.
      *
      * @return \DateTime
@@ -415,6 +585,20 @@ class Attachment
         $this->timestamp = $timestamp;
 
         return $this;
+    }
+
+    /**
+     * Set or get the title to use for the attachment.
+     *
+     * @return mixed
+     */
+    public function title($title = false)
+    {
+        if ($title === false) {
+            return $this->getTitle();
+        }
+
+        return $this->setTitle($title);
     }
 
     /**
@@ -441,6 +625,20 @@ class Attachment
     }
 
     /**
+     * Set or get the title link to use for the attachment.
+     *
+     * @return mixed
+     */
+    public function titleLink($title = false)
+    {
+        if ($title === false) {
+            return $this->getTitleLink();
+        }
+
+        return $this->setTitleLink($title);
+    }
+
+    /**
      * Get the title link to use for the attachment.
      *
      * @return string
@@ -461,6 +659,20 @@ class Attachment
         $this->title_link = $title_link;
 
         return $this;
+    }
+
+    /**
+     * Set or get the author name to use for the attachment.
+     *
+     * @return mixed
+     */
+    public function authorName($author_name = false)
+    {
+        if ($author_name === false) {
+            return $this->getAuthorName();
+        }
+
+        return $this->setAuthorName($author_name);
     }
 
     /**
@@ -487,6 +699,20 @@ class Attachment
     }
 
     /**
+     * Set or get the author link to use for the attachment.
+     *
+     * @return mixed
+     */
+    public function authorLink($author_link = false)
+    {
+        if ($author_link === false) {
+            return $this->getAuthorLink();
+        }
+
+        return $this->setAuthorLink($author_link);
+    }
+
+    /**
      * Get the author link to use for the attachment.
      *
      * @return string
@@ -510,6 +736,20 @@ class Attachment
     }
 
     /**
+     * Set or get the author icon to use for the attachment.
+     *
+     * @return mixed
+     */
+    public function authorIcon($author_icon = false)
+    {
+        if ($author_icon === false) {
+            return $this->getAuthorIcon();
+        }
+
+        return $this->setAuthorIcon($author_icon);
+    }
+
+    /**
      * Get the author icon to use for the attachment.
      *
      * @return string
@@ -530,6 +770,20 @@ class Attachment
         $this->author_icon = $author_icon;
 
         return $this;
+    }
+
+    /**
+     * Set or get the fields for the attachment.
+     *
+     * @return mixed
+     */
+    public function fields($fields = false)
+    {
+        if ($fields === false) {
+            return $this->getFields();
+        }
+
+        return $this->setFields($fields);
     }
 
     /**
@@ -602,6 +856,21 @@ class Attachment
         $this->actions = [];
 
         return $this;
+    }
+
+    /**
+     * Set or get the ields Slack should interpret in its
+     * Markdown-like language.
+     *
+     * @return mixed
+     */
+    public function markdownFields($markdown_fields = false)
+    {
+        if ($markdown_fields === false) {
+            return $this->getMarkdownFields();
+        }
+
+        return $this->setMarkdownFields($markdown_fields);
     }
 
     /**
@@ -700,6 +969,7 @@ class Attachment
             'author_name' => $this->getAuthorName(),
             'author_link' => $this->getAuthorLink(),
             'author_icon' => $this->getAuthorIcon(),
+            'callback_id' => $this->getCallbackId(),
         ];
 
         $data['fields'] = $this->getFieldsAsArrays();
